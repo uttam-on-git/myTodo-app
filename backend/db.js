@@ -1,8 +1,11 @@
 const mongoose = require("mongoose");
+import dotenv from 'dotenv';
 
-// mongodb+srv://dbuttam:BM7hna5cgf!!jEZ@cluster0.ruzagql.mongodb.net/
+dotenv.config();
+
+
 mongoose.connect(
-  "mongodb+srv://dbuttam:BM7hna5cgf!!jEZ@cluster0.ruzagql.mongodb.net/todos"
+  process.env.MONGO
 );
 const todoSchema = mongoose.Schema({
   title: String,
